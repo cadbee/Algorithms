@@ -1,0 +1,222 @@
+Для первого задания:
+sam
+simssamsipsam
+---------------------------------------------------------------------------------
+Checking a substring length 2: SAm
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: S and suffix: A
+Current function prefix values for substrings:
+|S||A||m|
+|0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+---------------------------------------------------------------------------------
+Checking a substring length 3: SAM
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: S and suffix: M
+Current function prefix values for substrings:
+|S||A||M|
+|0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+All substrings checked!
+                                LET'S CONTINUE THE KMP ALGORITHM!
+--------------------------------------------------------------------------------------------------
+Compare characters S and S
+        TEXT:      Simssamsipsam
+        SUBSTRING: Sam----------
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters I and A
+        TEXT:      sImssamsipsam
+        SUBSTRING: sAm----------
+Characters don't match! Checking the next prefix value.
+--------------------------------------------------------------------------------------------------
+Compare characters I and S
+        TEXT:      sImssamsipsam
+        SUBSTRING: -Sam---------
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters M and S
+        TEXT:      siMssamsipsam
+        SUBSTRING: --Sam--------
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters S and S
+        TEXT:      simSsamsipsam
+        SUBSTRING: ---Sam-------
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters S and A
+        TEXT:      simsSamsipsam
+        SUBSTRING: ---sAm-------
+Characters don't match! Checking the next prefix value.
+--------------------------------------------------------------------------------------------------
+Compare characters S and S
+        TEXT:      simsSamsipsam
+        SUBSTRING: ----Sam------
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters A and A
+        TEXT:      simssAmsipsam
+        SUBSTRING: ----sAm------
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters M and M
+        TEXT:      simssaMsipsam
+        SUBSTRING: ----saM------
+Found substring with index = 4 This is: simsSAMsipsam Decrease prefix value to prefix[last_prefix - 1] and continue sear
+ch!
+--------------------------------------------------------------------------------------------------
+Compare characters S and S
+        TEXT:      simssamSipsam
+        SUBSTRING: -------Sam---
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters I and A
+        TEXT:      simssamsIpsam
+        SUBSTRING: -------sAm---
+Characters don't match! Checking the next prefix value.
+--------------------------------------------------------------------------------------------------
+Compare characters I and S
+        TEXT:      simssamsIpsam
+        SUBSTRING: --------Sam--
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters P and S
+        TEXT:      simssamsiPsam
+        SUBSTRING: ---------Sam-
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters S and S
+        TEXT:      simssamsipSam
+        SUBSTRING: ----------Sam
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters A and A
+        TEXT:      simssamsipsAm
+        SUBSTRING: ----------sAm
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters M and M
+        TEXT:      simssamsipsaM
+        SUBSTRING: ----------saM
+Found substring with index = 10 This is: simssamsipSAM Decrease prefix value to prefix[last_prefix - 1] and continue sea
+rch!
+--------------------------------------------------------------------------------------------------
+All entries found!
+4,10
+
+==============================================================================================
+==============================================================================================
+
+Для второго задания:
+defabc
+abcdef
+Checking string lengths: sample = 6, text = 6
+Line lengths are the same. Let's concatenate string 'defabc' with itself and then search string 'abcdef' in 'defabcdefab
+c'
+---------------------------------------------------------------------------------
+Checking a substring length 2: ABcdef
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: A and suffix: B
+Current function prefix values for substrings:
+|A||B||c||d||e||f|
+|0||0||0||0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+---------------------------------------------------------------------------------
+Checking a substring length 3: ABCdef
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: A and suffix: C
+Current function prefix values for substrings:
+|A||B||C||d||e||f|
+|0||0||0||0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+---------------------------------------------------------------------------------
+Checking a substring length 4: ABCDef
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: A and suffix: D
+Current function prefix values for substrings:
+|A||B||C||D||e||f|
+|0||0||0||0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+---------------------------------------------------------------------------------
+Checking a substring length 5: ABCDEf
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: A and suffix: E
+Current function prefix values for substrings:
+|A||B||C||D||E||f|
+|0||0||0||0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+---------------------------------------------------------------------------------
+Checking a substring length 6: ABCDEF
+Previous prefix value: 0
+Check if prefix and suffix match with length: 1. Prefix: A and suffix: F
+Current function prefix values for substrings:
+|A||B||C||D||E||F|
+|0||0||0||0||0||0|
+---------------------------------------------------------------------------------
+No matching prefix and suffix for this substring!
+Moves to the next substring.
+All substrings checked!
+                                LET'S CONTINUE THE KMP ALGORITHM!
+--------------------------------------------------------------------------------------------------
+Compare characters D and A
+        TEXT:      Defabcdefabc
+        SUBSTRING: Abcdef------
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters E and A
+        TEXT:      dEfabcdefabc
+        SUBSTRING: -Abcdef-----
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters F and A
+        TEXT:      deFabcdefabc
+        SUBSTRING: --Abcdef----
+Characters don't match and prefix value is 0! Checking the next symbol in text.
+--------------------------------------------------------------------------------------------------
+Compare characters A and A
+        TEXT:      defAbcdefabc
+        SUBSTRING: ---Abcdef---
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters B and B
+        TEXT:      defaBcdefabc
+        SUBSTRING: ---aBcdef---
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters C and C
+        TEXT:      defabCdefabc
+        SUBSTRING: ---abCdef---
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters D and D
+        TEXT:      defabcDefabc
+        SUBSTRING: ---abcDef---
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters E and E
+        TEXT:      defabcdEfabc
+        SUBSTRING: ---abcdEf---
+Characters match! Continue the comparison
+--------------------------------------------------------------------------------------------------
+Compare characters F and F
+        TEXT:      defabcdeFabc
+        SUBSTRING: ---abcdeF---
+Found substring with index = 3 This is: defABCDEFabc Decrease prefix value to prefix[last_prefix - 1] and continue searc
+h!
+--------------------------------------------------------------------------------------------------
+All entries found!
+3
+
